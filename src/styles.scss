@@ -1,1 +1,154 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+
+@font-face {
+    font-family: 'Roboto'; // Use a unique name for your font
+    src:url('assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype'); // Include the TTF format
+  }
+
+
+$custom-primary: (
+    50:#1DA1F2,
+    100:#1DA1F2,
+    200:#1DA1F2,
+    300:#1DA1F2,
+    400:#1DA1F2,
+    500: #1DA1F2,
+    700:#1DA1F2,
+    800:#1DA1F2,
+    900:#1DA1F2,
+    contrast: (
+        50:#FFFFFF,
+       100:#FFFFFF,
+    200:#FFFFFF,
+    300:#FFFFFF,
+    400:#FFFFFF,
+    500: #FFFFFF,
+    700:#FFFFFF,
+    800:#FFFFFF,
+    900:#FFFFFF,
+    ),
+);
+
+$custom-accent: (
+    50:#EDF8FF,
+    100:#EDF8FF,
+    200:#EDF8FF,
+    300:#EDF8FF,
+    400:#EDF8FF,
+    500: #EDF8FF,
+    700:#EDF8FF,
+    800:#EDF8FF,
+    900:#EDF8FF,
+    contrast: (
+        50:#1DA1F2,
+       100:#1DA1F2,
+    200:#1DA1F2,
+    300:#1DA1F2,
+    400:#1DA1F2,
+    500: #1DA1F2,
+    700:#1DA1F2,
+    800:#1DA1F2,
+    900:#1DA1F2,
+    ),
+);
+
+
+
+$custom-typography: mat.define-typography-config(
+    $headline-1: mat.define-typography-level(
+        
+           18px,
+           21.09px,
+           500,
+          'Roboto',
+           normal
+        
+    ),
+  $headline-2: mat.define-typography-level(
+    
+       16px,
+       24px,
+       500,
+      'Roboto',
+       normal
+    
+  ),
+  $body-1: mat.define-typography-level(
+    
+       16px,
+       20px,
+       500,
+      'Roboto',
+       normal
+    
+  ),
+  $body-2: mat.define-typography-level(
+    
+       14px,
+       20px,
+       400,
+      'Roboto',
+       normal
+    
+  ),
+  $caption: mat.define-typography-level(
+    
+       15px,
+       20px,
+       400,
+      'Roboto',
+       normal
+    
+  ),
+  $button: mat.define-typography-level(
+    
+       14px,
+       16.41px,
+       500,
+      'Roboto',
+       normal
+    
+  )
+);
+
+
+// Define custom palettes using the custom colors
+$employees-primary: mat.define-palette($custom-primary);
+$employees-accent: mat.define-palette($custom-accent);
+
+// Define the warning palette
+$employees-warn: mat.define-palette(mat.$red-palette);
+
+// Define the custom theme
+$employees-theme: mat.define-light-theme((
+    color: (
+        primary: $employees-primary,
+        accent: $employees-accent,
+        warn: $employees-warn,
+    ),
+    typography: $custom-typography,
+    density: 0,
+));
+
+// Apply the custom theme to all Angular Material components
+@include mat.all-component-themes($employees-theme);
+
+
+
+
+
+
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
