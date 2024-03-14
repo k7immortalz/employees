@@ -1,0 +1,18 @@
+<mat-form-field >
+    <input matInput [matDatepicker]="dp"  [(ngModel)]="selectedDate">
+    <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker #dp touchUi [calendarHeaderComponent]="header" (Selected)="selectedDate">
+        <mat-calendar #db (selectedChange)="getChangedValue($event)"></mat-calendar>
+        <mat-datepicker-actions> 
+            <button mat-flat-button matDatepickerCancel color="accent">Cancel</button> 
+            <button mat-flat-button color="primary" matDatepickerApply>Apply</button> 
+            <button mat-raised-button color="primary" (click)="dp.select(getNextMonday())">
+                Next Monday
+              </button>
+              <button mat-raised-button color="primary" (click)="subm(db.stateChanges.next)">
+                Next friday
+              </button>
+              <div>{{ getFormattedDate() }}</div>
+        </mat-datepicker-actions> 
+    </mat-datepicker>
+  </mat-form-field>

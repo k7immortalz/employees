@@ -1,0 +1,25 @@
+<ng-container class="grid-con">
+<mat-grid-list cols="2" rowHeight="30px" [gutterSize]="'10px'">
+      <mat-grid-tile [colspan]=1 [rowspan]=1>
+        <button mat-flat-button color="accent" style="width: 150px;">Today</button>  
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]=1 [rowspan]=1>
+        <button mat-flat-button color="accent" style="width: 150px;">Next Monday</button> 
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]=1 [rowspan]=1>
+        <button mat-flat-button color="accent" style="width: 150px;">Next Tuesday</button> 
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]=1 [rowspan]=1>
+        <button mat-flat-button color="accent" style="width: 150px;">After 1 Week</button> 
+      </mat-grid-tile>
+  </mat-grid-list>
+</ng-container>
+   <div class="example-header">
+      <button mat-icon-button color="warn" (click)="previousClicked()">
+        <fa-icon [icon]="leftArrow"></fa-icon>
+      </button>
+      <span class="example-header-label">{{periodLabel}}</span>
+      <button mat-icon-button color="warn" (click)="nextClicked()">
+        <fa-icon [icon]="rightArrow"></fa-icon>
+      </button>
+    </div>

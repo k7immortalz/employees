@@ -1,3 +1,13 @@
 .height-89{
     min-height: 89vh;
 }
+.no-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftCorner{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}

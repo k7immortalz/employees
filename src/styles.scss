@@ -5,8 +5,8 @@
 
 @font-face {
     font-family: 'Roboto'; // Use a unique name for your font
-    src:url('assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype'); // Include the TTF format
-  }
+    src: url('assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype'); // Include the TTF format
+}
 
 
 $custom-primary: (
@@ -19,16 +19,15 @@ $custom-primary: (
     700:#1DA1F2,
     800:#1DA1F2,
     900:#1DA1F2,
-    contrast: (
-        50:#FFFFFF,
-       100:#FFFFFF,
-    200:#FFFFFF,
-    300:#FFFFFF,
-    400:#FFFFFF,
-    500: #FFFFFF,
-    700:#FFFFFF,
-    800:#FFFFFF,
-    900:#FFFFFF,
+    contrast: (50:#FFFFFF,
+        100:#FFFFFF,
+        200:#FFFFFF,
+        300:#FFFFFF,
+        400:#FFFFFF,
+        500: #FFFFFF,
+        700:#FFFFFF,
+        800:#FFFFFF,
+        900:#FFFFFF,
     ),
 );
 
@@ -39,80 +38,80 @@ $custom-accent: (
     300:#EDF8FF,
     400:#EDF8FF,
     500: #EDF8FF,
+    600: #EDF8FF,
     700:#EDF8FF,
     800:#EDF8FF,
     900:#EDF8FF,
     contrast: (
         50:#1DA1F2,
-       100:#1DA1F2,
-    200:#1DA1F2,
-    300:#1DA1F2,
-    400:#1DA1F2,
-    500: #1DA1F2,
-    700:#1DA1F2,
-    800:#1DA1F2,
-    900:#1DA1F2,
+        100:#1DA1F2,
+        200:#1DA1F2,
+        300:#1DA1F2,
+        400:#1DA1F2,
+        500: #1DA1F2,
+        600: #1DA1F2,
+        700:#1DA1F2,
+        800:#1DA1F2,
+        900:#1DA1F2,
+    ),
+);
+$custom-warn:(
+    50:#949C9E,
+        100:#949C9E,
+        200:#949C9E,
+        300:#949C9E,
+        400:#949C9E,
+        500: #949C9E,
+        600: #949C9E,
+        700:#949C9E,
+        800:#949C9E,
+        900:#949C9E,
+    contrast: (
+        50:#949C9E,
+        100:#949C9E,
+        200:#949C9E,
+        300:#949C9E,
+        400:#949C9E,
+        500: #949C9E,
+        600: #949C9E,
+        700:#949C9E,
+        800:#949C9E,
+        900:#949C9E,
     ),
 );
 
 
 
-$custom-typography: mat.define-typography-config(
-    $headline-1: mat.define-typography-level(
-        
-           18px,
-           21.09px,
-           500,
-          'Roboto',
-           normal
-        
-    ),
-  $headline-2: mat.define-typography-level(
-    
-       16px,
-       24px,
-       500,
-      'Roboto',
-       normal
-    
-  ),
-  $body-1: mat.define-typography-level(
-    
-       16px,
-       20px,
-       500,
-      'Roboto',
-       normal
-    
-  ),
-  $body-2: mat.define-typography-level(
-    
-       14px,
-       20px,
-       400,
-      'Roboto',
-       normal
-    
-  ),
-  $caption: mat.define-typography-level(
-    
-       15px,
-       20px,
-       400,
-      'Roboto',
-       normal
-    
-  ),
-  $button: mat.define-typography-level(
-    
-       14px,
-       16.41px,
-       500,
-      'Roboto',
-       normal
-    
-  )
-);
+$custom-typography: mat.define-typography-config($headline-1: mat.define-typography-level(18px,
+            21.09px,
+            500,
+            'Roboto',
+            0em),
+        $headline-2: mat.define-typography-level(16px,
+            24px,
+            500,
+            'Roboto',
+            0em),
+        $body-1: mat.define-typography-level(16px,
+            20px,
+            500,
+            'Roboto',
+            0em),
+        $body-2: mat.define-typography-level(14px,
+            20px,
+            400,
+            'Roboto',
+            0em),
+        $caption: mat.define-typography-level(15px,
+            20px,
+            400,
+            'Roboto',
+            0em),
+        $button: mat.define-typography-level(14px,
+            16.41px,
+            500,
+            'Roboto',
+            0em));
 
 
 // Define custom palettes using the custom colors
@@ -120,23 +119,70 @@ $employees-primary: mat.define-palette($custom-primary);
 $employees-accent: mat.define-palette($custom-accent);
 
 // Define the warning palette
-$employees-warn: mat.define-palette(mat.$red-palette);
+$employees-warn: mat.define-palette($custom-warn);
 
 // Define the custom theme
-$employees-theme: mat.define-light-theme((
-    color: (
-        primary: $employees-primary,
-        accent: $employees-accent,
-        warn: $employees-warn,
-    ),
-    typography: $custom-typography,
-    density: 0,
-));
+$employees-theme: mat.define-light-theme((color: (primary: $employees-primary,
+                accent: $employees-accent,
+                warn: $employees-warn,
+            ),
+            typography: $custom-typography,
+            density: 0,
+        ));
 
 // Apply the custom theme to all Angular Material components
 @include mat.all-component-themes($employees-theme);
 
 
+
+.mat-calendar-table-header th{
+    font-family: 'Roboto';
+font-size: 15px !important;
+font-weight: 400 !important;
+line-height: 20px;
+letter-spacing: 0em;
+}
+.mat-calendar {
+    font-family: 'Roboto';
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 20px;
+    letter-spacing: 0em;
+}
+
+
+
+  .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    border-color: #1DA1F2 !important;
+    color: #1DA1F2;
+}
+
+.mat-datepicker-actions {
+    background: white;
+}
+
+.mat-toolbar{
+font-family: 'Roboto' !important;
+font-size: 18px !important;
+font-weight: 500 !important;
+line-height: 21px !important;
+letter-spacing: 0em !important;
+text-align: left;
+
+}
+
+@media (orientation: portrait){
+.mat-datepicker-content-touch .mat-datepicker-content-container-with-actions {
+    height: 100% !important;
+}}
+
+mat-datepicker-content .mat-datepicker-content-container-with-custom-header .mat-calendar {
+    background: white;
+}
+
+.mat-grid-list {
+    margin-top: 18px;
+}
 
 
 
@@ -151,4 +197,11 @@ body {
 
 body {
     margin: 0;
+}
+
+.mat-calendar-body-label{
+    opacity: 0;
+}
+.mat-calendar-body-label[colspan="7"] {
+    display: none;
 }
